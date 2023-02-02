@@ -21,6 +21,8 @@ $capitales= array ("France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","
 // Etape 1 : ouvrir fonction afficherTableHTML avec variable de ref $tableau
 // Etape 2 : indiquer qu'on veut la liste par ordre alphab. -> "ksort"
 // Etape 3 : créer tableau en HTML pour qu'il puisse apparaitre par après comme demandé (lignes, bordures, etc.)
+
+
 $capitales = array("France" => "Paris", "Allemagne" => "Berlin", "Italie" => "Rome", "Espagne" => "Madrid");
 
 
