@@ -21,6 +21,36 @@ Tableau : ordre alphabétique algorithme.-> voir FONCTION "ksort" -->
 
 <!-- VARIABLES-->
 
-<?php 
+<?php
 
-echo "<table> 
+//VARIABLE
+// Etape 1 : ouvrir fonction afficherTableHTML avec variable de ref $tableau
+// Etape 2 : indiquer qu'on veut la liste par ordre alphab. -> "ksort"
+// Etape 3 : créer tableau en HTML pour qu'il puisse apparaitre par après comme demandé (lignes, bordures, etc.)
+$capitales = array("France" => "Paris", "Allemagne" => "Berlin", "Italie" => "Rome", "Espagne" => "Madrid");
+
+
+
+function AfficherTableHTML($capitales) {
+    ksort($capitales);
+    echo "<table border='1'>",
+    '<thead>',
+    '<tr>',
+      '<th>Pays</th>',
+      '<th>Capital</th>',
+    '</tr>',
+'<tbody>';
+    foreach ($capitales as $Pays => $Cap) {
+        strtoupper($Pays);
+        echo '<tr>',
+            '<td>' . $Pays . '</td>',
+            '<td>' . $Cap . '</td>',
+            '</tr>';
+    }
+    echo '</tbody>',
+    '</thead>',
+        '</table>';
+       
+    }
+    
+AfficherTableHTML($capitales);
