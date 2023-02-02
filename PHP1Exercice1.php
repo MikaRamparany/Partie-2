@@ -2,7 +2,7 @@
 
 Créer une fonction personnalisée convertirMajRouge()permettant de transformer une chaîne de caractère passée en argument en majuscules et en rouge.
 
-<h2> Resultat </h2>
+<h2> Résultat </h2>
 <?php
 
 // VARIABLE 
