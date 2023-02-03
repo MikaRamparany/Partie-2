@@ -16,7 +16,7 @@ $nomsInput = array("Nom", "Prénom", "Ville");
 function afficherInput($array){
     echo "<form style='background-color:E8E3E2;width: 180px; padding:6px'>"; // permet d'afficher la forme du tableau, couleur de fond, taille, padding.
         foreach ($array as $val){
-            echo "<p>".$val."<br><input type='text'/></p>";
+            echo "<p>".$val."<br><input type='text'/></p>"; // input type : pour le formulaire en liste normal
         }
     echo "</form>";
 }
