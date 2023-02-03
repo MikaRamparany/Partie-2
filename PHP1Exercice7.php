@@ -61,3 +61,5 @@ function genererCheckbox ( $choix){
      "</fieldset>";
 }
 genererCheckbox($choix);
+
+
