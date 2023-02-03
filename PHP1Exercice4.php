@@ -51,4 +51,5 @@ function AfficherTableHTML($capitales) {
        
     }
     
+    
 AfficherTableHTML($capitales);
