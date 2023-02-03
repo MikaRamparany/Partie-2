@@ -40,5 +40,24 @@ if (isset($_POST['mon_champ'])) {
    </form>
 
 
-Option 2 : 
+Option 2 : <br>
 
+<?php
+
+$choix = array("Choix 1"=>0, "Choix 2"=>0, "Choix 3"=>0);
+function genererCheckbox ( $choix){
+    //echo "<form style='background-color:E8E3E2;width: 30px; padding:30px'>"; 
+    echo "<fieldset>";  //L'élément HTML <fieldset> est utilisé afin de regrouper plusieurs contrôles interactifs ainsi que des étiquettes (<label>) dans un formulaire HTML.
+    foreach ($choix as $key => $Valeur) {
+        if ($Valeur == 0){
+            echo "<input type='checkbox' id=$Valeur name='Choix'><label for =$Valeur>$key</label>";
+        }
+
+        else {
+               echo "<input type='checkbox' id=$Valeur name='Choix'checked ><label for =$Valeur>$key</label>";
+            }
+        }
+    
+     "</fieldset>";
+}
+genererCheckbox($choix);
