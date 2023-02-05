@@ -30,6 +30,8 @@ function alimenterListeDeroulante($array){
        
         echo"<option value = '$civilité'> $civilité 
         </option>"; // OPTION VALUE permet de faire une liste déroulante. 
+        "</select";
+        
     }
 }
 alimenterListeDeroulante($elements);
