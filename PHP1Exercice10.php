@@ -51,7 +51,7 @@ Quelle formation souhaitez vous choisir ? <br> <br>
 
 ?> 
 
-Option tableaux 3 : <br> <br> 
+Option 2:  tableaux 3 : <br> <br> 
 
 <?php // Tableau 3 comme autre option pour l'exercice 
 
