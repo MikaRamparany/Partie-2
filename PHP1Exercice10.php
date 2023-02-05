@@ -48,3 +48,24 @@ Quelle formation souhaitez vous choisir ? <br> <br>
 <?php 
 // method=POST (ligne 37) permet d'ajouter des cases à cocher 
 // inpu type = submit + value = OK : permet d'ajouter un boutton OK de validation du formulaire. 
+
+?> 
+
+Option tableaux 3 : <br> <br> 
+
+<?php // Tableau 3 comme autre option pour l'exercice 
+
+$choixForma = array ("Développeur Logiciel","Designer web", "Intégrateur", "chef de projet");
+function alimenterListeDeroulante($array){
+    echo "<select name = 'civilité'> ";
+    foreach($array as $choixforma){
+       
+        echo"<option value = '$choixforma'> $choixforma 
+        </option>"; // OPTION VALUE permet de faire une liste déroulante. 
+        
+        "</select>";
+        
+    }
+}
+alimenterListeDeroulante($choixForma);
+echo "<input type = 'submit' value = 'Ok'/>"; 
