@@ -49,11 +49,11 @@ Quelle formation souhaitez vous choisir ? <br> <br>
 // method=POST (ligne 37) permet d'ajouter des cases à cocher 
 // inpu type = submit + value = OK : permet d'ajouter un boutton OK de validation du formulaire. 
 
-?> 
+$string = "Option 2:  tableaux 3 :<br>";
 
-Option 2:  tableaux 3 : <br> <br> 
+echo "<p style='color:red'>".$string;
 
-<?php // Tableau 3 comme autre option pour l'exercice 
+ // Tableau 3 comme autre option pour l'exercice 
 
 $choixForma = array ("Développeur Logiciel","Designer web", "Intégrateur", "chef de projet");
 function alimenterListeDeroulante($array){
