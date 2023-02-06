@@ -12,11 +12,11 @@ Une méthode personnalisée pourra afficher toutes les informations d’un véhi
 <?php
 
 class Voiture{
-    private $_marque;
-    private $_modele;
-    private $_nbPortes;
-    private $_vitesseInitiale;
-        public function demarrer(){
-        $this>$_vitesseInitiale == 0;
+    private string $_marque;
+    private string $_modele;
+    private int $_nbPortes;
+  
+        public function __construct(string $marque, string $_modele, string $_nbPortes){
+        $this->_nbPortes = $_nbPortes;
         }
 }
