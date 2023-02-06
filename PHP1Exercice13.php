@@ -23,6 +23,7 @@ class Voiture1{
         $this->_nbPortes = $_nbPortes;
         $this->_vitesseActuelle = $_vitesseActuelle;
         }
+        
 }
 
 
