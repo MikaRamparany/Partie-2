@@ -23,7 +23,49 @@ class Voiture1{
         $this->_nbPortes = $_nbPortes;
         $this->_vitesseActuelle = $_vitesseActuelle;
         }
-        
-}
+
+        //! Début accesseurs (getter) : param pour lire les valeurs.
+        public function get_marque() {
+            return $this-> _marque;
+        }
+        public function get_modele(){
+            return $this-> _modele;
+        }
+        public function get_nbPortes(){
+            return $this-> _nbPortes;
+        }
+        public function get_vitesseActuelle(){
+            return $this-> _vitesseActuelle;
+        }
+        //! Fin accesseurs (getter).
+
+        //* Début mutateurs (setter) : param qui permettent de modifier les valeurs. 
+
+        public function set_marque() {
+            return $this-> _marque;
+        }
+        public function set_modele(){
+            return $this-> _modele;
+        }
+        public function set_nbPortes(){
+            return $this-> _nbPortes;
+        }
+        public function set_vitesseActuelle(){
+            return $this-> _vitesseActuelle;
+        }
+
+       //* Fin mutateurs (setter).
+
+       //* ------------------------------------
+
+       public function Demarrer (){
+            if ($this-> _vitesseActuelle==0){
+                echo "Le véhicule" .$this->_marque. " ".$this->_modele." démarre <br>";
+                $this->_vitesseActuelle = 1
+
+            }
+
+       }
+  }
 
 
