@@ -54,7 +54,7 @@ $string = "Option 2:  tableaux 3 :<br>";
 echo "<p style='color:red'>".$string;
 
  // Tableau 3 comme autre option pour l'exercice 
-
+echo "Quelle formation souhaitez-vous choisir ? : ";
 $choixForma = array ("Développeur Logiciel","Designer web", "Intégrateur", "chef de projet");
 function alimenterListeDeroulante($array){
     echo "<select name = 'civilité'> ";
