@@ -61,7 +61,7 @@ class Voiture1{
        public function Demarrer (){
             if ($this-> _vitesseActuelle==0){
                 echo "Le véhicule" .$this->_marque. " ".$this->_modele." démarre <br>";
-                $this->_vitesseActuelle = 1
+                $this->_vitesseActuelle = 1;
 
             }
 
