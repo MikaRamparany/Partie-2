@@ -92,7 +92,7 @@ class Voiture
     public function accelerer($vitesse){
         // (!$this->_statut) = $this->_statut = false
         if (!$this->_statut){ 
-            echo "Pour accélerer, il faut démarrer le véhicule" .$this->_marque. " "  .$this->_modele. "!"; 
+            echo"Le véhicule".$this->_marque. " ".$this->_modele. " veut accélerer de " .$vitesse. " km / h " . " Pour accélerer, il faut démarrer le véhicule" .$this->_marque. " "  .$this->_modele. "!"; 
             
     }   else {
         echo "Le véhicule" .$this->_marque. " ".$this->_modele. "accélère de " .$vitesse. " km / h <br>";
@@ -119,6 +119,8 @@ $v2 = new Voiture("Citroën","C4",3);
 echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
 
 echo $v1 -> demarrer();
-echo $v1 -> accelerer();
-
+echo $v1 -> accelerer(20);
+echo $v2 -> demarrer();
+echo $v2 -> stopper();
+echo $v2 -> accelerer(20);
 echo "</form>";
