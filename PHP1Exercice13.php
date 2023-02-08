@@ -2,7 +2,7 @@
 
 Créer une classe Voiture possédant les propriétés suivantes: <br> <br>
 
-marque, modèle, nbPortes et vitesseActuelleainsi que les méthodes demarrer( ), accelerer( )et stopper( )en plus des accesseurs (get) et mutateurs (set) traditionnels. <br><br>
+marque, modèle, nbPortes et vitesseActuelle ainsi que les méthodes demarrer( ), accelerer( )et stopper( )en plus des accesseurs (get) et mutateurs (set) traditionnels. <br><br>
 
 La vitesse initiale de chaque véhicule instancié est de 0. <br>
 Une méthode personnalisée pourra afficher toutes les informations d’un véhicule.
@@ -25,7 +25,7 @@ class Voiture
         $this->_modele = $_modele;
         $this->_nbPortes = $_nbPortes;
         $this->_vitesseActuelle = 0;
-        $this->_statut = true; // démarré
+        $this->_statut = false; // arrêt
     }
 
     //! Début accesseurs (getter) : param pour lire les valeurs.
@@ -70,21 +70,55 @@ class Voiture
 
     //* ------------------------------------
     public function demarrer(){
-        if($_statut=true){ 
-            echo "Le véhicule .$_marque. ' ' .$_modele. ' ' démarre. <br> ";  
-        $this -> _vitesseActuelle = 0;
+        // ($this->_statut) = $this-> _statut = true
+        if($this->_statut){ 
+            echo "Le véhicule est déjà démarré !";
+        } else {
+            echo "Le véhicule " .$this->_marque. " "  .$this->_modele.  "  démarre <br> ";  
+            $this->_statut = true;
+        }
     }
-    }
+
     public function stopper()
-    {
-        $this -> _vitesseActuelle = 0;
+    {   if(!$this->_statut){ 
+        echo "Le véhicule est déjà à l'arrêt !";
+    } else {
+        echo "Le véhicule " .$this->_marque. " "  .$this->_modele.  "  est stoppé <br> ";  
+        $this->_statut = false;
+        }
     }
-    public function accelerer()
-    {
-        $this -> _vitesseActuelle = 0;
+
+
+    public function accelerer($vitesse){
+        // (!$this->_statut) = $this->_statut = false
+        if (!$this->_statut){ 
+            echo "Pour accélerer, il faut démarrer le véhicule" .$this->_marque. " "  .$this->_modele. "!"; 
+            
+    }   else {
+        echo "Le véhicule" .$this->_marque. " ".$this->_modele. "accélère de " .$vitesse. " km / h <br>";
+
+        $this -> _vitesseActuelle += $vitesse;
+        }
     }
-    public function ralentir()
-    {
-        $this -> _vitesseActuelle = 0;
-    }
-}
+
+    public function ralentir($vitesse) {
+        if (!$this ->_statut) {
+            echo "Pour ralentir, il faut que le véhicule" .$this->_marque. " "  .$this->_modele."soit déjà démarré !";
+
+    }   else {
+        echo "Le véhicule" .$this->_marque. " ".$this->_modele. "ralentit de " .$vitesse. " km / h <br>";
+        $this -> _vitesseActuelle -= $vitesse;
+        }
+    
+    }     
+}   
+
+$v1 = new Voiture("Peugeot","408",5);
+$v2 = new Voiture("Citroën","C4",3);
+
+echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
+
+echo $v1 -> demarrer();
+echo $v1 -> accelerer();
+
+echo "</form>";
