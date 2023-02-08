@@ -53,9 +53,9 @@ class Voiture
     {
         $this->_marque = $marque;
     }
-    public function set_modele( $modele)
+    public function set_modele($modele)
     {
-        $this->_modele= $modele;
+        $this->_modele = $modele;
     }
     public function set_nbPortes($nbPortes)
     {
@@ -69,58 +69,96 @@ class Voiture
     //* Fin mutateurs (setter).
 
     //* ------------------------------------
-    public function demarrer(){
+    public function demarrer()
+    {
         // ($this->_statut) = $this-> _statut = true
-        if($this->_statut){ 
+        if ($this->_statut) {
             echo "Le véhicule est déjà démarré !";
         } else {
-            echo "Le véhicule " .$this->_marque. " "  .$this->_modele.  "  démarre <br> ";  
+            echo "Le véhicule " . $this->_marque . " "  . $this->_modele .  "  démarre <br> ";
             $this->_statut = true;
         }
     }
 
     public function stopper()
-    {   if(!$this->_statut){ 
-        echo "Le véhicule est déjà à l'arrêt !";
-    } else {
-        echo "Le véhicule " .$this->_marque. " "  .$this->_modele.  "  est stoppé <br> ";  
-        $this->_statut = false;
+    {
+        if (!$this->_statut) {
+            echo "Le véhicule est déjà à l'arrêt !";
+        } else {
+            echo "Le véhicule " . $this->_marque . " "  . $this->_modele .  "  est stoppé <br> ";
+            $this->_statut = false;
+            $this->_vitesseActuelle = 0;
         }
     }
 
 
-    public function accelerer($vitesse){
+    public function accelerer($vitesse)
+    {
         // (!$this->_statut) = $this->_statut = false
-        if (!$this->_statut){ 
-            echo"Le véhicule".$this->_marque. " ".$this->_modele. " veut accélerer de " .$vitesse. " km / h " . " Pour accélerer, il faut démarrer le véhicule" .$this->_marque. " "  .$this->_modele. "!"; 
-            
-    }   else {
-        echo "Le véhicule" .$this->_marque. " ".$this->_modele. "accélère de " .$vitesse. " km / h <br>";
+        if (!$this->_statut) {
+            echo "Le véhicule " . $this->_marque . " " . $this->_modele . " veut accélérer de " . $vitesse . " km / h ." . "<br> Pour accélérer, il faut démarrer le véhicule " . $this->_marque . " "  . $this->_modele . " !";
+        } else {
+            echo "Le véhicule " . $this->_marque . " " . $this->_modele . " accélère de " . $vitesse . " km / h <br>";
 
-        $this -> _vitesseActuelle += $vitesse;
+            $this->_vitesseActuelle += $vitesse;
         }
     }
 
-    public function ralentir($vitesse) {
-        if (!$this ->_statut) {
-            echo "Pour ralentir, il faut que le véhicule" .$this->_marque. " "  .$this->_modele."soit déjà démarré !";
-
-    }   else {
-        echo "Le véhicule" .$this->_marque. " ".$this->_modele. "ralentit de " .$vitesse. " km / h <br>";
-        $this -> _vitesseActuelle -= $vitesse;
+    public function ralentir($vitesse)
+    {
+        if (!$this->_statut) {
+            echo "Pour ralentir, il faut que le véhicule" . $this->_marque . " "  . $this->_modele . "soit déjà démarré !";
+        } else {
+            echo "Le véhicule" . $this->_marque . " " . $this->_modele . "ralentit de " . $vitesse . " km / h <br>";
+            $this->_vitesseActuelle -= $vitesse;
         }
-    
-    }     
-}   
+    }
+    public function infovehicule()
+    {
+        echo "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
+        echo "<br> Nombre de portes : ".$this->_nbPortes;
+        if (!$this->_statut) {
+            echo "<br>La voiture est démarrée. ";
+        } else {
+            echo "<br>La voiture est stoppée . ";
+        }
+        echo "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
+    }
+}
 
-$v1 = new Voiture("Peugeot","408",5);
-$v2 = new Voiture("Citroën","C4",3);
+$v1 = new Voiture("Peugeot", "408", 5);
+$v2 = new Voiture("Citroën", "C4", 3);
 
 echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
 
-echo $v1 -> demarrer();
-echo $v1 -> accelerer(20);
-echo $v2 -> demarrer();
-echo $v2 -> stopper();
-echo $v2 -> accelerer(20);
+$v1->demarrer();
+$v1->accelerer(50);
+$v1->accelerer(50);
+$v2->demarrer();
+// $v2 -> stopper();
+$v2->accelerer(20);
+$v2->accelerer(70);
+
+
+echo "La vitesse actuelle du véhicule Peugeot 408 est de " . $v1->get_vitesseActuelle() . " km / h <br>";
+echo "La vitesse actuelle du véhicule Citroen C4 est de " . $v2->get_vitesseActuelle() . " km / h <br>";
+
+echo "</form>";
+
+// Tableau avec toutes les infos Véhicule 1 et Véhicule 2 :
+
+echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
+
+echo "Infos véhicule 1 <br> <br> ********** <br> <br>";
+
+$v1-> infovehicule();
+
+echo "</form>";
+
+echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
+
+echo "Infos véhicule 1 <br> <br> ********** <br> <br>";
+
+$v2-> infovehicule();
+
 echo "</form>";
