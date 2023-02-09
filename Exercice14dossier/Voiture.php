@@ -131,19 +131,19 @@ $v2 = new Voiture("Citroën", "C4", 3);
 
 echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
 
-$v1->demarrer();
-$v1->accelerer(50);
-$v1->accelerer(50);
-$v2->demarrer();
-// $v2 -> stopper();
-$v2->accelerer(20);
-$v2->accelerer(70);
+// $v1->demarrer();
+// $v1->accelerer(50);
+// $v1->accelerer(50);
+// $v2->demarrer();
+// // $v2 -> stopper();
+// $v2->accelerer(20);
+// $v2->accelerer(70);
 
 
-echo "La vitesse actuelle du véhicule Peugeot 408 est de " . $v1->get_vitesseActuelle() . " km / h <br>";
-echo "La vitesse actuelle du véhicule Citroen C4 est de " . $v2->get_vitesseActuelle() . " km / h <br>";
+// echo "La vitesse actuelle du véhicule Peugeot 408 est de " . $v1->get_vitesseActuelle() . " km / h <br>";
+// echo "La vitesse actuelle du véhicule Citroen C4 est de " . $v2->get_vitesseActuelle() . " km / h <br>";
 
-echo "</form>";
+// echo "</form>";
 
 // Tableau avec toutes les infos Véhicule 1 et Véhicule 2 :
 

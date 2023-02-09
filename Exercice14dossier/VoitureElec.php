@@ -127,3 +127,4 @@ class VoitureElec
       }
   }
 
+  $ve1 =new VoitureElec("BMW","i3", 300, 5);
