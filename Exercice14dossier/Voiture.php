@@ -16,5 +16,9 @@ class Voiture
 {
     private string $_marque;
     private string $_modele;
+    private int $_nbPortes;
+    private int $_vitesseActuelle;
+    private bool $_statut; 
+
 
 }
