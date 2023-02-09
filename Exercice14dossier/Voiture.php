@@ -92,7 +92,7 @@ class Voiture
     }
 
 
-    public function accelerer($vitesse)
+    public function accelerer(int $vitesse)
     {
         // (!$this->_statut) = $this->_statut = false
         if (!$this->_statut) {
@@ -107,12 +107,18 @@ class Voiture
     public function ralentir($vitesse)
     {
         if (!$this->_statut) {
-            echo "Pour ralentir, il faut que le véhicule" . $this->_marque . " "  . $this->_modele . "soit déjà démarré !";
+            echo "Pour ralentir, il faut que le véhicule " . $this->_marque . " "  . $this->_modele . "soit déjà démarré !";
         } else {
-            echo "Le véhicule" . $this->_marque . " " . $this->_modele . "ralentit de " . $vitesse . " km / h <br>";
+            echo "Le véhicule " . $this->_marque . " " . $this->_modele . " ralentit de " . $vitesse . " km / h <br>";
             $this->_vitesseActuelle -= $vitesse;
         }
     }
+
+    public function infosVitesse(){
+        $result =  "La vitesse actuelle du véhicule ". $this->_marque . " " . $this->_modele." est de " . $this->get_vitesseActuelle() . " km / h <br>";
+        return $result;
+    }
+
     public function infovehicule()
     {
         echo "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
@@ -124,41 +130,21 @@ class Voiture
         }
         echo "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
     }
+
+    // public function infovehicule()
+    // {
+    //     $result = "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
+    //     $result .= "<br> Nombre de portes : ".$this->_nbPortes;
+    //     if (!$this->_statut) {
+    //         $result .= "<br>La voiture est démarrée. ";
+    //     } else {
+    //         $result .= "<br>La voiture est stoppée . ";
+    //     }
+    //     $result .= "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
+
+    //     return $result;
+    // }
 }
 
-$v1 = new Voiture("Peugeot", "408", 5);
-$v2 = new Voiture("Citroën", "C4", 3);
-
-echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
-
-// $v1->demarrer();
-// $v1->accelerer(50);
-// $v1->accelerer(50);
-// $v2->demarrer();
-// // $v2 -> stopper();
-// $v2->accelerer(20);
-// $v2->accelerer(70);
 
 
-// echo "La vitesse actuelle du véhicule Peugeot 408 est de " . $v1->get_vitesseActuelle() . " km / h <br>";
-// echo "La vitesse actuelle du véhicule Citroen C4 est de " . $v2->get_vitesseActuelle() . " km / h <br>";
-
-// echo "</form>";
-
-// Tableau avec toutes les infos Véhicule 1 et Véhicule 2 :
-
-echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
-
-echo "Infos véhicule 1 <br> <br> ********** <br> <br>";
-
-$v1-> infovehicule();
-
-echo "</form>";
-
-echo "<form style='background-color:E8E3E2;width: 680px; padding: 10px'>";
-
-echo "Infos véhicule 1 <br> <br> ********** <br> <br>";
-
-$v2-> infovehicule();
-
-echo "</form>";
