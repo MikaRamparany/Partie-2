@@ -13,3 +13,5 @@ spl_autoload_register(function($class)
 
 $v1 = new Voiture("Peugeot", "408", 5);
 $ve1 =new VoitureElec("BMW","i3", 300, 5);
+
+$ve1->infovehicule();

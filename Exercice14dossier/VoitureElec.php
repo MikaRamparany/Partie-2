@@ -117,6 +117,7 @@ class VoitureElec
       {
           echo "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
           echo "<br> Nombre de portes : ".$this->_nbPortes;
+          echo "<br> Autonomie : " .$this->_autonomie;
           if (!$this->_statut) {
               echo "<br>La voiture est démarrée. ";
           } else {
