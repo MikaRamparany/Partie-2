@@ -2,8 +2,6 @@
 
 En  utilisant  les  ressources  de  la  page http://php.net/manual/fr/book.filter.php,  vérifier  si  une adresse e-mail a le bon format.
 
-
-
 <h2> Résultat </h2>
 
 <?php 
@@ -15,4 +13,4 @@ if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 }else{
   echo "L'adresse e-mail n'est pas valide";
 }
-?>
+?> 
