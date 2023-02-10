@@ -119,31 +119,31 @@ class Voiture
         return $result;
     }
 
-    public function infovehicule()
-    {
-        echo "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
-        echo "<br> Nombre de portes : ".$this->_nbPortes;
-        if (!$this->_statut) {
-            echo "<br>La voiture est démarrée. ";
-        } else {
-            echo "<br>La voiture est stoppée . ";
-        }
-        echo "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
-    }
-
     // public function infovehicule()
     // {
-    //     $result = "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
-    //     $result .= "<br> Nombre de portes : ".$this->_nbPortes;
+    //     echo "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
+    //     echo "<br> Nombre de portes : ".$this->_nbPortes;
     //     if (!$this->_statut) {
-    //         $result .= "<br>La voiture est démarrée. ";
+    //         echo "<br>La voiture est démarrée. ";
     //     } else {
-    //         $result .= "<br>La voiture est stoppée . ";
+    //         echo "<br>La voiture est stoppée . ";
     //     }
-    //     $result .= "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
-
-    //     return $result;
+    //     echo "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
     // }
+
+    public function infovehicule()
+    {
+        $result = "Nom et modèle du véhicule : ".$this->_marque. " " .$this->_modele;
+        $result .= "<br> Nombre de portes : ".$this->_nbPortes;
+        if (!$this->_statut) {
+            $result .= "<br>La voiture est démarrée. ";
+        } else {
+            $result .= "<br>La voiture est stoppée . ";
+        }
+        $result .= "<br>Sa vitesse actuelle est de : ".$this->get_vitesseActuelle(). " km / h <br>";
+
+        return $result;
+    }
 }
 
 

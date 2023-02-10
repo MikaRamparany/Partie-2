@@ -63,7 +63,7 @@ $v2 = new Voiture("Citroën", "C4", 3);
 
 echo "Infos véhicule 1 <br> <br> ********** <br> <br>";
 
-echo "<div class='trucmuch'>". $v1-> infovehicule() . "</div> <br>";
+echo "<div class='demonstrationB'>". $v1-> infovehicule() . "</div> <br>";
 ?>
 
 <?php

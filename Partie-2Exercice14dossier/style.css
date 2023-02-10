@@ -10,7 +10,7 @@
  }
 
 
-  /* .infos {
+  .infos {
 
     padding: 20px;
     background-color: blue;
@@ -20,10 +20,11 @@
   }
 
 
-  .trucmuch {
+  /* .demonstrationB {
 
     
     padding: 20px;
-    background-color: green; */
-    /* border: 8px solid violet; */
-    /* border-radius: 50%; */
+    background-color: green; 
+    border: 8px solid violet;
+    border-radius: 50%;
+  } */
